@@ -1,0 +1,1123 @@
+//Инициализация
+
+@import "normalize";
+
+@font-face {
+  font-family: 'EuropeExt Normal';
+  src:  url('../fonts/EuropeExtNormal.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EuropeExt Bold';
+  src:  url('../fonts/EuropeExtBold.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  overflow: scroll !important;
+  background-color: white;
+}
+
+//Врапер для контента страницы
+.wrapper {
+  overflow: hidden;
+}
+
+/*--------------------------------------- Меню-------------------------------*/
+
+
+.mobile-header {
+  width: 100%;
+  display: none;
+  position: fixed !important;
+  top: 0;
+  background: url("../images/background-green-repeat.png");
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  transition: transform .4s ease,-webkit-transform .4s ease;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.nav-top-logo {
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+}
+
+.nav-top-logo-icon {
+  width: 23px;
+}
+
+.nav-top-logo-text {
+  width: 210px;
+}
+
+#my-icon {
+  float: right;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background: white;
+}
+
+.mm-navbar.mm-hasbtns {
+  padding: 0 10px;
+}
+
+.mmenu-logo {
+  margin-top: -5px;
+}
+
+ #my-menu {
+   font-family: "Arial", sans-serif;
+ }
+//Родительский контейнер с повторяющимся фоном
+.nav-top {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 83px;
+  background: url("../images/background-green-repeat.png");
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5), inset 0 -3px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+//Меню
+.menu {
+  max-width: 999px;
+  height: 83px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  display: block;
+}
+
+
+//Элемент меню
+.menu > li {
+  position: relative;
+  height: 83px;
+  padding: 32px 10px 29px 10px;
+}
+
+.menu  li:hover {
+  background-color: rgba(0,0,0,0.2)
+}
+
+//Ссылка внутри элемента
+.menu li a {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+}
+
+//Оформление активной страницы
+
+.active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  top: -7px;
+  width: 100%;
+  height: 2px;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+}
+
+
+//Выпадающий список
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: none;
+  padding: 0;
+  margin: 0;
+  top: 83px;
+  left: 0;
+  list-style: none;
+  background: url("../images/background-green-repeat.png");
+}
+
+.dropdown li {
+  position: relative;
+}
+
+.dropdown > li > .dropdown {
+  top: 0;
+  display: none;
+  left: 100%;
+}
+
+.dropdown > li > .last-submenu {
+  left: -100%;
+}
+
+.dropdown > li {
+  margin: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid green;
+}
+
+.dropdown > li:last-child {
+  border: none;
+}
+
+.dropdown a {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+.menu li:hover > .dropdown {
+  display: block;
+}
+
+/*--------------------------Хеадер-----------------------*/
+
+//Фон в виде музея
+.view {
+  background-image: url("../images/background-museum.jpg");
+  z-index: 10;
+  padding-top: 106px;
+  height: 827px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.info {
+  max-width: 979px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.item {
+
+  margin-bottom: 7px;
+}
+
+
+//Логотип
+
+.logo-big  img{
+  width: 100%;
+  height: auto;
+}
+
+//Ссылки регистрации и входа
+.login-reg-box {
+  display: inline-block;
+  text-align: right;
+  max-width: 140px;
+  height: 11px;
+  float: right;
+  margin-right: 14px;
+  margin-top: 4px;
+}
+
+.login-reg {
+  text-decoration: none;
+  color: #01983b;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.login-reg:hover{
+  text-decoration: underline;
+}
+
+.login-reg:active {
+  color: darkblue;
+}
+
+
+//Правая сторона блока контактных данных
+.item:nth-child(2) {
+  width: 414px;
+  height: 90px;
+  margin-top: 13px;
+}
+
+
+//Флекс контейнер для языкового меню и социального блока
+.lang-plus-social-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 414px;
+  height: 21px;
+}
+
+
+//Языковое меню
+
+.styled-select {
+   width: 30px;
+   height: 30px;
+   overflow: hidden;
+   background: url("../images/contact-data/arrow.png") no-repeat left;
+   margin-top: -8px;
+   }
+
+.styled-select select {
+  cursor: pointer;
+  padding-left: 11px;
+  background: transparent;
+  width: 50px;
+  height: 9px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+  color: #2c2783;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 700;
+   }
+
+.styled-select select:focus {
+  outline: none;
+}
+
+
+//Cоциальный блок
+.social {
+  position: relative;
+  width: 221px;
+  height: 21px;
+}
+
+
+.social-text {
+  width: 167px;
+  height: 11px;
+  color: #01983b;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  margin-top: 6px;
+
+}
+
+.social-icon {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+}
+
+.vk {
+  background: url(../images/social-icons/vk.svg) no-repeat;
+  top: 0;
+  right: 0;
+}
+
+.vk:hover {
+    background: url(../images/social-icons/vk-hover.svg) no-repeat;
+}
+
+.vk:active {
+    background: url(../images/social-icons/vk-active.svg) no-repeat;
+}
+
+.linkedin {
+  background: url(../images/social-icons/linkedin.svg) no-repeat;
+  top: 0;
+  right: 25px;
+}
+
+.linkedin:hover {
+    background: url(../images/social-icons/linkedin-hover.svg) no-repeat;
+}
+
+.linkedin:active {
+    background: url(../images/social-icons/linkedin-active.svg) no-repeat;
+}
+
+.contact-data-search {
+  margin-left: auto;
+}
+
+//Контактные данные
+.header-contact-data {
+  max-width: 417px;
+  height: auto;
+  color: #2c2783;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-top: 7px;
+}
+
+.header-contact-data span {
+  display: inline-block;
+}
+
+//Поиск
+.search {
+  position: relative;
+  max-width: 416px;
+  height: 25px;
+  margin-top: 3px;
+  padding-right: 30px;
+
+}
+
+.search-box {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid  rgba(44, 39, 131, 0.3);
+  margin-bottom: 6px;
+}
+
+.search-box:focus {
+  border-color: #2c2783;
+  box-shadow: 0 3px 3px -2px #2c2783;
+}
+
+.lens {
+  background: transparent url("../images/contact-data/lens.png") no-repeat;
+  width: 25px;
+  height: 26px;
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.search-error {
+  display: none;
+  font-family: 'Arial', sans-serif;
+  color: red;
+}
+
+/*---------------------------Слайдер---------------------------*/
+
+.swiper-container {
+  z-index: 10;
+  position: relative;
+  max-width: 979px;
+  height: auto;
+  margin: auto;
+  margin-top: 14px;
+}
+
+  .swiper-container img {
+    width: 100%;
+    height: auto;
+  }
+
+
+.swiper-pagination,
+.swiper-pagination-clickable,
+ {
+  z-index: 100;
+  position: absolute;
+  height: 3px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  left: 18px;
+  bottom: 16px;
+  width: 190px;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 3px;
+}
+
+ .swiper-pagination-bullet {
+    width:32px;
+    height:3px;
+    opacity: 1;
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    color: white;
+    text-decoration: none;
+}
+.swiper-pagination-bullet-active {
+    background-color: #01983b;
+    box-shadow: 0 0 4px #01983b;
+}
+
+
+.slide-text-box {
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  width: 770px;
+  height: 140px;
+  background-color: rgba(1, 152, 59, 0.36);
+}
+
+
+//Текст слайда
+.slide-text {
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: 'EuropeExt Normal', arial;
+}
+
+.slide-text:nth-child(1) {
+  height: 27px;
+  margin-left: 26px;
+  margin-top: 39px;
+}
+
+.slide-text:nth-child(2) {
+  height: 27px;
+  margin-left: 207px;
+  margin-top: 1px;
+}
+
+.slide-text:nth-child(3) {
+  font-family: 'EuropeExt Bold', arial;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.94);
+  margin-left: 24px;
+  margin-top: 17px;
+
+}
+
+
+//Тень слайдера
+.slider-shadow {
+  position: relative;
+  left: -31px;
+  bottom: 40px;
+  width: 1335px;
+  height: 117px;
+  margin: auto;
+  background: url("../images/slider/slider-shadow.png") no-repeat;
+  background-size: cover;
+
+
+}
+
+/*-----------------------------------Успех---------------------------------*/
+
+
+.yspeh-box {
+  position: relative;
+  height: 561px;
+  background-image:  url("../images/yspeh/background-blue-repeat.png");
+
+}
+
+
+//Фоны
+.yspeh-box::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: url("../images/yspeh/background-iregions.png") no-repeat;
+    background-size: cover;
+    background-position: center top;
+    -webkit-animation: iregions 5s linear infinite;
+    animation: iregions 5s linear infinite;
+}
+
+@-webkit-keyframes iregions {
+    0%   {opacity: 0.2;}
+    50%  {opacity: 1;}
+    100% {opacity: 0.2;}
+}
+
+@keyframes iregions {
+    0%   {opacity: 0.2;}
+    50%  {opacity: 1;}
+    100% {opacity: 0.2;}
+}
+
+.penoboard-background {
+  width: 100%;
+  height: 100%;
+}
+
+.penoboard-background::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/backrgound-penoboard.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-animation: penoboard 1s;
+  animation: penoboard 1s;
+}
+
+@-webkit-keyframes penoboard {
+    0%   { transform: translate(-100%, 0);}
+    70%  {transform: translate(20%, 0);}
+    100% {transform: translate(0, 0);}
+}
+
+
+@keyframes penoboard {
+    0%   { transform: translate(-100%, 0);}
+    70%  {transform: translate(20%, 0);}
+    100% {transform: translate(0, 0);}
+}
+
+
+.yspeh-wrapper {
+  position: relative;
+  top: 68px;
+  max-width: 1017px;
+  height: 454px;
+  margin: auto;
+  z-index: 10;
+
+}
+
+.yspeh-container {
+  position: relative;
+  max-width: 1004px;
+  height: 454px;
+}
+
+.yspeh-container hr {
+  display: none;
+  opacity: 0.35;
+  margin: 15px 0;
+}
+
+
+//Круги
+.yspeh-item {
+  position: absolute;
+}
+
+
+.circle:nth-child(1) {
+  left: 97px;
+}
+
+.circle:nth-child(2) {
+  left: 471px;
+  //bottom: 0;
+  top: 194px;
+}
+
+.circle:nth-child(3) {
+  top: 16px;
+  //left: 764px;
+  right: 8px;
+
+}
+
+//Текст
+
+
+.yspeh-text-1 {
+  width: 462px;
+  height: 29px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+  top: -5px;
+  left: 30%;
+  //margin: auto;
+}
+
+.yspeh-text-2 {
+  width: 445px;
+  height: 27px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  left: 0;
+  top: 114px;
+}
+
+
+.yspeh-text-3 {
+  width: 400px;
+  height: 55px;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 72px;
+  left: 217px;
+  top: 166px;
+}
+
+.yspeh-text-3 .smaller {
+  font-size: 36px;
+}
+
+.yspeh-text-3 sup {
+  font-size: 46px;
+}
+
+.yspeh-text-4 {
+  width: 158px;
+  height: 22px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  right: 215px;
+  top: 166px;
+}
+
+.yspeh-text-5 {
+  width: 220px;
+  height: 117px;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: 700;
+  line-height: 68px;
+  font-size: 163px;
+  right: 0;
+  top: 103px;
+}
+
+.yspeh-text-5 .smaller{
+  margin: 0;
+  padding: 0;
+  font-size: 82px;
+}
+
+.yspeh-text-6 {
+  width: 530px;
+  height: 33px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  left: 263px;
+  top: 298px;
+}
+
+
+.yspeh-text-7 {
+  width: 334px;
+  height: 55px;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 72px;
+  left: 534px;
+  top: 345px;
+}
+
+ .yspeh-text-7 .smaller {
+   font-size: 36px;
+ }
+
+ .yspeh-text-7 sup {
+   font-size: 46px;
+ }
+
+
+/*--------------------Цветное лого--------------------------------*/
+.logo-color-box {
+
+  text-align: center;
+  max-width: 394px;
+  height: 47px;
+  margin: auto;
+  margin-top: 59px;
+  margin-bottom: 10px;
+
+}
+
+.logo-color {
+  position: relative;
+  display: inline-block;
+  height: auto;
+}
+
+
+.logo-text {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  font-family: 'EuropeExt Bold', arial;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: uppercase;
+  color: #01983b
+}
+
+.logo-text span {
+  color: #2c2783;
+}
+
+.logo-text-tm {
+  position: absolute;
+  right: -13px;
+  top: -10px;
+  width: 19px;
+  height: 6px;
+  color: #2c2783;
+  font-family: 'EuropeExt Bold', arial;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+
+/*-----------------------------Сертификаты-------------------------*/
+.certificate-text {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #2c2783;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.certificate {
+  width: 876px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin: auto;
+  margin-top: 29px;
+}
+
+.certificate-item:hover {
+  opacity: 0.7;
+}
+
+
+/*---------------------------------Награда------------------------------*/
+.award-text {
+
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 32px;
+  text-align: center;
+  color: #2c2783;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+
+}
+
+.award-text span {
+  display: inline-block;
+}
+
+
+.award-img {
+  display: block;
+  width: 111px;
+  height: 96px;
+  margin: auto;
+  margin-top: 11px;
+}
+
+/*-------------------------------Блок контактных данных----------------------*/
+.contact-box {
+  max-width: 1224px;
+  min-height: 207px;
+  margin: auto;
+  margin-top: 39px;
+  padding-top: 44px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: url("../images/backrgound-penoboard.png") no-repeat, url("../images/background-green-repeat.png") repeat;
+  background-size: contain, auto;
+  background-position: center 165px, 0 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+.contact-text-block {
+  max-width: 546px;
+  min-height: 133px;
+  margin: auto;
+}
+
+.contact-title {
+  width: 167px;
+  height: 30px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-bottom: 11px;
+}
+
+.contact-text {
+  text-align: center;
+  max-width: 550px;
+  min-height: 92px;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.contact-text span:nth-child(2) {
+  line-height: 22px;
+}
+
+.contact-text span:nth-child(3) {
+  font-size: 14px;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.contact-text span:nth-child(4) {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+
+
+/*-----------------------------------Карта------------------------------*/
+.map {
+  width: 100%;
+  height: 337px;
+  position: absolute;
+  z-index: -1;
+  bottom: 312px;
+
+}
+
+
+
+
+
+/*----------------------------------------Футер---------------------------*/
+.footer {
+  margin-top: 295px;
+  width: 100%;
+  height: 324px;
+  background: url("../images/footer/i-regions.png") no-repeat,
+              url("../images/backrgound-penoboard.png") no-repeat,
+              url("../images/background-green-repeat.png") repeat;
+  background-size: cover, contain, auto;
+  background-position: center top, center center, 0 0;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.2);
+  padding-top: 14px;
+}
+
+.logo-white {
+  width: 47px;
+  height: 58px;
+  margin: auto;
+  position: relative;
+}
+
+.logo-white-top {
+  position: absolute;
+  top: 0;
+}
+
+.logo-white-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.logo-white-text {
+  max-width: 346px;
+  height: auto;
+  margin: auto;
+  padding: 0 5px;
+}
+
+.logo-white-text img {
+  width: 100%;
+  height: auto;
+}
+
+.copyright-data {
+  width: 40px;
+  height: 9px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.we-in-social {
+  width: 145px;
+  height: 9px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.white-social-icons {
+  width: 74px;
+  height: 32px;
+  margin: auto;
+  margin-top: 7px;
+}
+
+.white-linkedin {
+  width: 32px;
+  height: 32px;
+  float: left;
+  background: url(../images/social-icons/linkedin-white.svg) no-repeat;
+}
+
+.white-linkedin:hover {
+  background: url(../images/social-icons/linkedin-hover.svg) no-repeat;
+}
+
+.white-linkedin:active {
+  background: url(../images/social-icons/linkedin-active.svg) no-repeat;
+}
+
+.white-vk {
+  width: 34px;
+  height: 32px;
+  float: right;
+  background: url(../images/social-icons/vk-white.svg) no-repeat;
+}
+
+.white-vk:hover {
+  background: url(../images/social-icons/vk-hover.svg) no-repeat;
+}
+
+.white-vk:active {
+  background: url(../images/social-icons/vk-active.svg) no-repeat;
+}
+
+.banner-img {
+  margin: auto;
+  margin-top: 13px;
+  max-width: 488px;
+  height: auto;
+  padding: 0 10px;
+}
+
+.banner-img img{
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  text-align: center;
+  max-width: 369px;
+  height: 12px;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: 13px;
+}
+
+.wezom {
+  width: 245px;
+  height: 14px;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-top: 14px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-link:active {
+  color: darkblue;
+}
